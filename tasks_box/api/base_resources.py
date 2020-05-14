@@ -42,4 +42,3 @@ class BaseTaskResource(Resource):
         self.data.append(task)
         self.save_data(self.data)
         return task
-
