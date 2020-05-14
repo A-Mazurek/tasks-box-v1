@@ -1,0 +1,17 @@
+version: '3'
+
+services:
+    web:
+        build: .
+        command: >
+            bash -c "flask run -h 0.0.0.0"
+        environment:
+            - FLASK_APP=app:app
+            - FLASK_ENV=development
+        volumes:
+            - ./tasks_box:/app
+        ports:
+            - "5000:5000"
+        tty: true
+        stdin_open: true
+        privileged: true
